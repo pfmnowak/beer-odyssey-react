@@ -1,0 +1,22 @@
+.beers-page {
+	background-color: #f7f7f7;
+	min-height: 100vh;
+
+	&__header {
+		font-size: 2rem;
+		font-weight: 700;
+		clip-path: polygon(0 0, 100% 0%, 100% 64%, 0% 100%);
+		background-image: linear-gradient(
+			to right,
+			#7b69b5,
+			#776fb6,
+			#7474b7,
+			#7279b7,
+			#7386b5,
+			#788eb1
+		);
+		color: rgb(255, 166, 0);
+		padding-top: 2rem;
+		padding-bottom: 4rem;
+	}
+}
