@@ -1,0 +1,21 @@
+:root {
+	// COLORS
+	--color-primary: #ffa600;
+
+	--color-black: #000;
+	--color-white: #f7f7f7;
+	--color-grey-light: #ccc;
+	--color-grey-dark: #555;
+
+	// SHADOWS
+	--shadow-basic: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+	--shadow-eleveted: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+	// FONT
+	--default-font-size: 1.6rem;
+	--font-size-large: 2rem;
+	--font-size-xl: 3rem;
+
+	// BORDER
+	--border-radius-medium: 1rem;
+}
