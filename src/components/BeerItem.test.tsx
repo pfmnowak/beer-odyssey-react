@@ -50,7 +50,6 @@ describe('BeerItem component', () => {
 		renderComponent();
 
 		const name = screen.getByText(/trashy blonde/i);
-
 		expect(name).toBeInTheDocument();
 	});
 
@@ -58,7 +57,6 @@ describe('BeerItem component', () => {
 		renderComponent();
 
 		const tagline = screen.getByText(/You Know You Shouldn't/i);
-
 		expect(tagline).toBeInTheDocument();
 	});
 
@@ -66,7 +64,6 @@ describe('BeerItem component', () => {
 		renderComponent();
 
 		const image = screen.getByRole('img');
-
 		expect(image).toHaveAttribute('src', 'https://images.punkapi.com/v2/2.png');
 	});
 });
