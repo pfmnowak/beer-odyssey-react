@@ -1,0 +1,79 @@
+@import '../sass/main.scss';
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	padding: 5rem;
+
+	&__item {
+		padding: 0 1rem;
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		text-align: center;
+		margin: auto 0.4rem;
+		color: rgba(0, 0, 0, 0.87);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		user-select: none;
+		letter-spacing: 0.01071em;
+		line-height: 1.43;
+		font-size: var(--default-font-size);
+
+		@include respond(phone) {
+			&:not(&--arrow):not(.selected) {
+				display: none;
+			}
+		}
+
+		&.dots:hover {
+			background-color: transparent;
+			cursor: default;
+		}
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.04);
+			cursor: pointer;
+		}
+
+		&.selected {
+			background-color: var(--color-primary);
+		}
+
+		&.disabled {
+			pointer-events: none;
+
+			.arrow::before {
+				border-right: 0.12em solid rgba(0, 0, 0, 0.43);
+				border-top: 0.12em solid rgba(0, 0, 0, 0.43);
+			}
+
+			&:hover {
+				background-color: transparent;
+				cursor: default;
+			}
+		}
+
+		.arrow {
+			&::before {
+				position: relative;
+				content: '';
+				/* By using an em scale, the arrows will size with the font */
+				display: inline-block;
+				width: 0.4em;
+				height: 0.4em;
+				border-right: 0.12em solid rgba(0, 0, 0, 0.87);
+				border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+			}
+
+			&.left {
+				transform: rotate(-135deg) translate(-50%);
+			}
+
+			&.right {
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

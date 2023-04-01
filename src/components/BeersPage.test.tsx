@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
 import { API_URL } from '../constants/constants';
 import { createServer } from '../test/server';
 import { beers } from '../test/testData';
@@ -6,9 +7,9 @@ import BeersPage from './BeersPage';
 
 function renderComponent() {
 	render(
-		// <MemoryRouter>
-		<BeersPage />,
-		// </MemoryRouter>,
+		<MemoryRouter>
+			<BeersPage />
+		</MemoryRouter>,
 	);
 }
 
@@ -21,13 +22,13 @@ describe('BeersPage', () => {
 			},
 		]);
 
-		it('displays the BeersList', async () => {
+		it('displays the BeersList with the pagionation', async () => {
 			renderComponent();
 
-			const list = await screen.findByRole('list');
+			const lists = await screen.findAllByRole('list');
 			await screen.findByText(/You Know You Shouldn't/i);
 
-			expect(list).toBeInTheDocument();
+			expect(lists).toHaveLength(2);
 		});
 
 		it('displays the beer data from the API', async () => {
