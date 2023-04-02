@@ -41,8 +41,7 @@ describe('BeersPage', () => {
 		it('displays the Loading indicator until the data arrives', async () => {
 			renderComponent();
 
-			// const loadingIndicator = await screen.findByRole('progressbar');
-			const loadingIndicator = await screen.findByText(/loading/i);
+			const loadingIndicator = await screen.findByLabelText(/loading/i);
 			expect(loadingIndicator).toBeInTheDocument();
 
 			const tagline = await screen.findByText(/You Know You Shouldn't/i);
@@ -119,8 +118,7 @@ describe('BeersPage', () => {
 
 			await screen.findByText(/could not fetch the data/i);
 
-			// const loadingIndicator = screen.queryByRole('progressbar');
-			const loadingIndicator = screen.queryByRole(/loading/i);
+			const loadingIndicator = screen.queryByLabelText(/loading/i);
 			expect(loadingIndicator).not.toBeInTheDocument();
 		});
 	});

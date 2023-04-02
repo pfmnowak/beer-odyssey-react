@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FadeLoader } from 'react-spinners';
 import { API_URL, ITEMS_PER_PAGE, TOTAL_COUNT } from '../constants/constants';
 import useFetchBeers from '../hooks/useFetchBeers';
 import BeersList from './BeersList';
@@ -35,9 +36,9 @@ const BeersPage = () => {
 		<div className={classes['beers-page']}>
 			<header className={classes['beers-page__header']}>Beers</header>
 			<main className={classes['beers-page__container']}>
-				{loading && <p>Loading...</p>}
+				{loading && <FadeLoader loading={loading} aria-label='Loading Spinner' />}
 				{hasError && <p>Could not fetch the data. Please try again</p>}
-				{!hasError && (
+				{!hasError && !loading && (
 					<>
 						<BeersList items={beersList} count={beersCount} page={currentPage} />
 						<Pagination
