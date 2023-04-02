@@ -1,10 +1,17 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
 import classes from './App.module.scss';
-import BeersPage from './components/BeersPage';
+import BeerDetailsPage from './pages/BeerDetailsPage/BeerDetailsPage';
+import BeersPage from './pages/BeersPage/BeersPage';
 
 function App() {
 	return (
 		<div className={classes.app}>
-			<BeersPage />
+			<Routes>
+				<Route path='/' element={<Navigate to='/beers' replace />} />
+				<Route path='/beers' element={<BeersPage />} />
+				<Route path='/beers/details/:beerId' element={<BeerDetailsPage />} />
+				{/* <Route path='*' element={<NotFound />} /> */}
+			</Routes>
 		</div>
 	);
 }

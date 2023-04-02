@@ -1,10 +1,10 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FadeLoader } from 'react-spinners';
-import { API_URL, ITEMS_PER_PAGE, TOTAL_COUNT } from '../constants/constants';
-import useFetchBeers from '../hooks/useFetchBeers';
-import BeersList from './BeersList';
+import BeersList from '../../components/BeersList';
+import Pagination from '../../components/Pagination';
+import { API_URL, ITEMS_PER_PAGE, TOTAL_COUNT } from '../../constants/constants';
+import useFetchBeers from '../../hooks/useFetchBeers';
 import classes from './BeersPage.module.scss';
-import Pagination from './Pagination';
 
 const BeersPage = () => {
 	const navigate = useNavigate();

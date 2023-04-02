@@ -7,6 +7,16 @@
 	--color-grey-light: #ccc;
 	--color-grey-dark: #555;
 
+	--background-gradient: linear-gradient(
+		to right,
+		#7b69b5,
+		#776fb6,
+		#7474b7,
+		#7279b7,
+		#7386b5,
+		#788eb1
+	);
+
 	// SHADOWS
 	--shadow-basic: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 	--shadow-eleveted: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -15,6 +25,7 @@
 	--default-font-size: 1.6rem;
 	--font-size-large: 2rem;
 	--font-size-xl: 3rem;
+	--font-size-xxl: 5rem;
 
 	// BORDER
 	--border-radius-medium: 1rem;

@@ -8,15 +8,7 @@
 		font-size: var(--font-size-xl);
 		font-weight: 700;
 		clip-path: polygon(0 0, 100% 0%, 100% 64%, 0% 100%);
-		background-image: linear-gradient(
-			to right,
-			#7b69b5,
-			#776fb6,
-			#7474b7,
-			#7279b7,
-			#7386b5,
-			#788eb1
-		);
+		background-image: var(--background-gradient);
 		color: var(--color-primary);
 		padding-top: 2rem;
 		padding-bottom: 4rem;

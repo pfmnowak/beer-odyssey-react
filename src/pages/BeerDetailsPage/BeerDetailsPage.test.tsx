@@ -1,35 +1,26 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
-import { API_URL } from '../constants/constants';
-import { createServer } from '../test/server';
-import { beers } from '../test/testData';
-import BeersPage from './BeersPage';
+import { API_URL } from '../../constants/constants';
+import { createServer } from '../../test/server';
+import { beers } from '../../test/testData';
+import BeerDetailsPage from './BeerDetailsPage';
 
 function renderComponent() {
 	render(
 		<MemoryRouter>
-			<BeersPage />
+			<BeerDetailsPage />
 		</MemoryRouter>,
 	);
 }
 
-describe('BeersPage', () => {
+describe('BeerDetailsPage', () => {
 	describe('on data fetch', () => {
 		createServer([
 			{
-				path: API_URL,
-				res: beers,
+				path: `${API_URL}/0`,
+				res: beers.filter(beer => beer.id === 2),
 			},
 		]);
-
-		it('displays the BeersList with the pagionation', async () => {
-			renderComponent();
-
-			const lists = await screen.findAllByRole('list');
-			await screen.findByText(/You Know You Shouldn't/i);
-
-			expect(lists).toHaveLength(2);
-		});
 
 		it('displays the beer data from the API', async () => {
 			renderComponent();
@@ -49,21 +40,12 @@ describe('BeersPage', () => {
 			expect(loadingIndicator).not.toBeInTheDocument();
 		});
 
-		it('displays the header with the proper text content', async () => {
-			renderComponent();
-
-			await screen.findByText(/You Know You Shouldn't/i);
-
-			const header = screen.getByRole('banner');
-			expect(header).toHaveTextContent(/beers/i);
-		});
-
 		it('does not display the Error message', async () => {
 			renderComponent();
 
 			await screen.findByText(/You Know You Shouldn't/i);
 
-			const error = screen.queryByText(/could not fetch the data/i);
+			const error = screen.queryByText(/could not fetch Beer/i);
 			expect(error).not.toBeInTheDocument();
 		});
 	});
@@ -71,7 +53,7 @@ describe('BeersPage', () => {
 	describe('on data fetch error', () => {
 		createServer([
 			{
-				path: API_URL,
+				path: `${API_URL}/0`,
 				status: 403,
 				res: {
 					errorMessage: 'Not found',
@@ -82,41 +64,23 @@ describe('BeersPage', () => {
 		it('displays the Error message', async () => {
 			renderComponent();
 
-			const error = await screen.findByText(/could not fetch the data/i);
+			const error = await screen.findByText(/could not fetch Beer/i);
 			expect(error).toBeInTheDocument();
-		});
-
-		it('displays the header with the proper text content', async () => {
-			renderComponent();
-
-			await screen.findByText(/could not fetch the data/i);
-
-			const header = screen.getByRole('banner');
-			expect(header).toHaveTextContent(/beers/i);
 		});
 
 		it('does not display the beer data', async () => {
 			renderComponent();
 
-			await screen.findByText(/could not fetch the data/i);
+			await screen.findByText(/could not fetch Beer/i);
 
 			const tagline = screen.queryByRole(/You Know You Shouldn't/i);
 			expect(tagline).not.toBeInTheDocument();
 		});
 
-		it('does not display the BeersList', async () => {
-			renderComponent();
-
-			await screen.findByText(/could not fetch the data/i);
-
-			const list = screen.queryByRole('list');
-			expect(list).not.toBeInTheDocument();
-		});
-
 		it('does not display the Loading indicator ', async () => {
 			renderComponent();
 
-			await screen.findByText(/could not fetch the data/i);
+			await screen.findByText(/could not fetch Beer/i);
 
 			const loadingIndicator = screen.queryByLabelText(/loading/i);
 			expect(loadingIndicator).not.toBeInTheDocument();
