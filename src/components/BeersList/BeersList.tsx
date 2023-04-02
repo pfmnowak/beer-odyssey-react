@@ -1,5 +1,5 @@
-import { Beers } from '../types/types';
-import BeerItem from './BeerItem';
+import { Beers } from '../../types/types';
+import BeerItem from '../BeerItem/BeerItem';
 import classes from './BeersList.module.scss';
 
 type BeersListProps = {

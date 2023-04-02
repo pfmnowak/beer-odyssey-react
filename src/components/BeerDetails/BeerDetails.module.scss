@@ -1,0 +1,40 @@
+.beer {
+	display: flex;
+
+	&__img-container {
+		max-width: 40rem;
+		width: 100%;
+		padding: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	&__img {
+		height: 35rem;
+		user-select: none;
+	}
+
+	&__info {
+		margin-left: 5rem;
+	}
+
+	&__name {
+		font-size: var(--font-size-xxl);
+		font-weight: 600;
+	}
+
+	&__id {
+		font-size: var(--font-size-xxl);
+		font-weight: 600;
+	}
+
+	&__tagline {
+		line-height: 1.5;
+		font-size: var(--font-size-xl);
+	}
+
+	&__abv-label,
+	&__ibu-label {
+		font-size: var(--font-size-large);
+		font-weight: 600;
+	}
+}

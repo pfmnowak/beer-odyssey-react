@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FadeLoader } from 'react-spinners';
-import BeersList from '../../components/BeersList';
-import Pagination from '../../components/Pagination';
+import BeersList from '../../components/BeersList/BeersList';
+import Pagination from '../../components/Pagination/Pagination';
 import { API_URL, ITEMS_PER_PAGE, TOTAL_COUNT } from '../../constants/constants';
 import useFetchBeers from '../../hooks/useFetchBeers';
 import classes from './BeersPage.module.scss';

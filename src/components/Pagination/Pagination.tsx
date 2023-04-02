@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { DOTS, usePagination } from '../hooks/usePagination';
+import { DOTS, usePagination } from '../../hooks/usePagination';
 import classes from './Pagination.module.scss';
 
 type PaginationProps = {

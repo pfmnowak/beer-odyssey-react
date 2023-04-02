@@ -1,4 +1,4 @@
-import { Beer } from '../types/types';
+import { Beer } from '../../types/types';
 import classes from './BeerItem.module.scss';
 
 type BeerItemProps = {

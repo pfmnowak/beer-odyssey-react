@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { FadeLoader } from 'react-spinners';
+import BeerDetails from '../../components/BeerDetails/BeerDetails';
 import { API_URL } from '../../constants/constants';
 import useFetchBeers from '../../hooks/useFetchBeers';
 import classes from './BeerDetailsPage.module.scss';
@@ -16,10 +17,7 @@ const BeerDetailsPage = () => {
 			<div className={classes['details-page__container']}>
 				{loading && <FadeLoader loading={loading} aria-label='Loading Spinner' />}
 				{hasError && <p>Could not fetch Beer&apos;s details. Please try again</p>}
-				{
-					!hasError && !loading && beersList && beersList[0].name
-					// <BeerDetails beerItem={beersList[0]} />
-				}
+				{!hasError && !loading && beersList && <BeerDetails beerItem={beersList[0]} />}
 			</div>
 		</div>
 	);
