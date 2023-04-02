@@ -1,7 +1,6 @@
 .beer-item {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	width: 20rem;
 	padding: 2.5rem 2rem;
 	margin: 2rem;
@@ -42,5 +41,10 @@
 		display: -webkit-box;
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
+	}
+
+	&__link {
+		color: inherit;
+		text-decoration: inherit;
 	}
 }

@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
-
 import { API_URL } from '../../constants/constants';
 import { createServer } from '../../test/server';
 import { beers } from '../../test/testData';
