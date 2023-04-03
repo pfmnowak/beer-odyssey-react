@@ -12,6 +12,14 @@
 		color: var(--color-primary);
 		padding-top: 2rem;
 		padding-bottom: 4rem;
+
+		@include respond(tab-land) {
+			clip-path: polygon(0 0, 100% 0%, 100% 74%, 0% 100%);
+		}
+
+		@include respond(phone) {
+			clip-path: polygon(0 0, 100% 0%, 100% 84%, 0% 100%);
+		}
 	}
 
 	&__container {

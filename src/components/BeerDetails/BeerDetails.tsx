@@ -17,9 +17,14 @@ const BeerDetails = ({ beerItem }: BeerDetailsProps) => {
 					<IconButton onClick={() => navigate(-1)} name='icon-chevron-left1' />
 				</div>
 				<div className={classes['beer__img-container']}>
-					<img src={beerItem.imageUrl} className={classes['beer__img']} />
+					<img
+						src={
+							beerItem.imageUrl ? beerItem.imageUrl : require('./../../img/unknown-beer-bottle.png')
+						}
+						className={classes['beer__img']}
+						alt='Beer Bottle'
+					/>
 				</div>
-
 				<div className={classes['beer__main-info']}>
 					<p className={classes['beer__name']} title={beerItem.name}>
 						{beerItem.name}

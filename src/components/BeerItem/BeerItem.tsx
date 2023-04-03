@@ -10,7 +10,11 @@ const BeerItem = ({ item }: BeerItemProps) => {
 	return (
 		<li className={classes['beer-item']}>
 			<Link className={classes['beer-item__link']} to={`/beers/details/${item.id}`}>
-				<img src={item.imageUrl} className={classes['beer-item__img']} />
+				<img
+					src={item.imageUrl ? item.imageUrl : require('./../../img/unknown-beer-bottle.png')}
+					className={classes['beer-item__img']}
+					alt='Beer Bottle'
+				/>
 				<p className={classes['beer-item__name']} title={item.name}>
 					{item.name}
 				</p>
