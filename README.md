@@ -2,6 +2,8 @@
 
 This React app allows to list Beers fetched from an external API and display their details.
 
+Created by ~ Mikołaj Nowak
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Used technologies
@@ -15,10 +17,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Flexbox
 - SVG
 - React Routing
+- ESLint
+- Prettier
 
 ## Running the application
 
 To test the application you can run it in the development mode by running `npm start` in the console.
+
+You can also test it live here: https://pfmnowak.github.io/beer-odyssey-react/
 
 ## Implemented Features
 
