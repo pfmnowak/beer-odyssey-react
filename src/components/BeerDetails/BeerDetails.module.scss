@@ -40,6 +40,11 @@
 	&__img {
 		height: 35rem;
 		user-select: none;
+		transition: all 0.3s;
+
+		&:hover {
+			transform: rotate(15deg);
+		}
 	}
 
 	&__info {
