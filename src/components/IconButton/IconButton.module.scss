@@ -14,7 +14,7 @@
 	@include hover-supported() {
 		background-color: var(--color-black);
 		fill: var(--color-primary);
-		box-shadow: var(--shadow-eleveted);
+		box-shadow: var(--shadow-elevated);
 	}
 
 	&:active {
