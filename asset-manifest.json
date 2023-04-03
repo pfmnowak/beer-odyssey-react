@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/beer-odyssey-react/static/css/main.24a7c348.css",
-    "main.js": "/beer-odyssey-react/static/js/main.cbeeeaf7.js",
+    "main.css": "/beer-odyssey-react/static/css/main.bc8ce789.css",
+    "main.js": "/beer-odyssey-react/static/js/main.f66ec99f.js",
     "static/js/787.53e213ee.chunk.js": "/beer-odyssey-react/static/js/787.53e213ee.chunk.js",
     "static/media/404.jpg": "/beer-odyssey-react/static/media/404.1dfb49391eefa9e10cff.jpg",
+    "static/media/unknown-beer-bottle.png": "/beer-odyssey-react/static/media/unknown-beer-bottle.e9c9e6f6a1c0fad928ef.png",
     "static/media/sprite.svg": "/beer-odyssey-react/static/media/sprite.36a43f48ea1d58dd5ac595db4ec4676d.svg",
     "index.html": "/beer-odyssey-react/index.html",
-    "main.24a7c348.css.map": "/beer-odyssey-react/static/css/main.24a7c348.css.map",
-    "main.cbeeeaf7.js.map": "/beer-odyssey-react/static/js/main.cbeeeaf7.js.map",
+    "main.bc8ce789.css.map": "/beer-odyssey-react/static/css/main.bc8ce789.css.map",
+    "main.f66ec99f.js.map": "/beer-odyssey-react/static/js/main.f66ec99f.js.map",
     "787.53e213ee.chunk.js.map": "/beer-odyssey-react/static/js/787.53e213ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.24a7c348.css",
-    "static/js/main.cbeeeaf7.js"
+    "static/css/main.bc8ce789.css",
+    "static/js/main.f66ec99f.js"
   ]
 }
