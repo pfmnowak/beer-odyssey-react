@@ -1,7 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import IconButton from '../../components/IconButton/IconButton';
 import classes from './NotFound.module.scss';
 
 const NotFound = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className={classes['not-found']}>
 			<div className={classes['not-found__img-container']}>
@@ -21,9 +24,12 @@ const NotFound = () => {
 			<p className={classes['not-found__text']}>
 				The beer that you are looking for apparently does not exist.
 			</p>
-			<NavLink to='/' className={classes['not-found__btn']}>
-				Take me home
-			</NavLink>
+			<div className={classes['not-found__actions']}>
+				<IconButton onClick={() => navigate(-1)} name='icon-chevron-left1' />
+				<NavLink to='/'>
+					<IconButton name='icon-home' />
+				</NavLink>
+			</div>
 		</div>
 	);
 };

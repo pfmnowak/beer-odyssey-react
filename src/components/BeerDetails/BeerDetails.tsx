@@ -1,4 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import { Beer } from '../../types/types';
+import IconButton from '../IconButton/IconButton';
 import classes from './BeerDetails.module.scss';
 
 type BeerDetailsProps = {
@@ -6,8 +8,13 @@ type BeerDetailsProps = {
 };
 
 const BeerDetails = ({ beerItem }: BeerDetailsProps) => {
+	const navigate = useNavigate();
+
 	return (
 		<div className={classes.beer}>
+			<div>
+				<IconButton onClick={() => navigate(-1)} name='icon-chevron-left1' />
+			</div>
 			<div className={classes['beer__img-container']}>
 				<img src={beerItem.imageUrl} className={classes['beer__img']} />
 			</div>

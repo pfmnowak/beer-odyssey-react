@@ -1,9 +1,14 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { fakeBeer } from '../../test/testData';
 import BeerDetails from './BeerDetails';
 
 function renderComponent() {
-	render(<BeerDetails beerItem={fakeBeer} />);
+	render(
+		<MemoryRouter>
+			<BeerDetails beerItem={fakeBeer} />
+		</MemoryRouter>,
+	);
 }
 
 describe('BeerDetails component', () => {
